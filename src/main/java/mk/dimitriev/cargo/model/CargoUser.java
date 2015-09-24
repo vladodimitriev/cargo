@@ -78,7 +78,6 @@ public class CargoUser {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", address=" + address
-				+ ", email=" + email + "]";
+		return "User [id=" + id + ", username=" + username + ", address=" + address + ", email=" + email + "]";
 	}
 }

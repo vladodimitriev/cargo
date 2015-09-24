@@ -8,7 +8,7 @@
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
-		<java-version>1.8</java-version>
+		<java-version>1.7</java-version>
 		<org.springframework-version>4.2.1.RELEASE</org.springframework-version>
 		<hibernate.version>4.3.6.Final</hibernate.version>
 		<org.aspectj-version>1.6.10</org.aspectj-version>
@@ -17,6 +17,7 @@
 		<postgresql.connector.version>9.4-1202-jdbc42</postgresql.connector.version>
 		<spring.security.version>4.0.2.RELEASE</spring.security.version>
 		<jackson.version>2.5.3</jackson.version>
+		<oracle.version>11.2.0.4</oracle.version>
 	</properties>
 	<dependencies>
 		<!-- hibernate -->
@@ -188,6 +189,11 @@
             <artifactId>postgresql</artifactId>
             <version>${postgresql.connector.version}</version>
         </dependency>
+        <dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>${oracle.version}</version>
+		</dependency>
         
 		<!-- Test -->
 		<dependency>
@@ -221,8 +227,8 @@
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
+					<source>${java-version}</source>
+					<target>${java-version}</target>
 				</configuration>
 			</plugin>
 		</plugins>

@@ -16,6 +16,8 @@ public class Auction {
 	private String auctionNumber;
 	
 	private Float price;
+	
+	private boolean isFinished;
 
 	public Long getId() {
 		return id;
@@ -56,6 +58,13 @@ public class Auction {
 	public void setPrice(Float price) {
 		this.price = price;
 	}
-	
-	
+
+	public boolean isFinished() {
+		return isFinished;
+	}
+
+	public void setFinished(boolean isFinished) {
+		this.isFinished = isFinished;
+	}
+		
 }
