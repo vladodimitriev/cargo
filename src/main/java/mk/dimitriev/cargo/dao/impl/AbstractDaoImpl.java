@@ -17,7 +17,7 @@ public class AbstractDaoImpl<E> implements AbstractDao<E>{
 	
 	@SuppressWarnings("unchecked")
 	public AbstractDaoImpl(){
-		this.persistentClass =(Class<E>) ((ParameterizedType) this.getClass().getGenericSuperclass()).getActualTypeArguments()[1];
+		this.persistentClass =(Class<E>) ((ParameterizedType) this.getClass().getGenericSuperclass()).getActualTypeArguments()[0];
 	}
 	
 	@Autowired

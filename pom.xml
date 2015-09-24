@@ -189,12 +189,15 @@
             <artifactId>postgresql</artifactId>
             <version>${postgresql.connector.version}</version>
         </dependency>
+        
+        <!-- 
         <dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc6</artifactId>
 			<version>${oracle.version}</version>
 		</dependency>
-        
+         -->
+         
 		<!-- Test -->
 		<dependency>
 			<groupId>junit</groupId>
