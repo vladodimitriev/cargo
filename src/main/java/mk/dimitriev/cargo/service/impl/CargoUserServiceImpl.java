@@ -11,7 +11,7 @@ import mk.dimitriev.cargo.service.CargoUserService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-@Service("userService")
+@Service("cargoUserService")
 @Transactional
 public class CargoUserServiceImpl implements CargoUserService {
 

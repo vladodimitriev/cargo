@@ -26,7 +26,7 @@ public class HelloWorldRestController {
     
     //-------------------Retrieve All Users--------------------------------------------------------
      
-    @RequestMapping(value = "/user/", method = RequestMethod.GET)
+    @RequestMapping(value = "/hwuser/", method = RequestMethod.GET)
     public ResponseEntity<List<CargoUser>> listAllUsers() {
         List<CargoUser> users = userService.findAllUsers();
         if(users.isEmpty()){
@@ -39,7 +39,7 @@ public class HelloWorldRestController {
     
     //-------------------Retrieve Single User--------------------------------------------------------
      
-    @RequestMapping(value = "/user/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/hwuser/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<CargoUser> getUser(@PathVariable("id") long id) {
         System.out.println("Fetching User with id " + id);
         CargoUser user = userService.findById(id);
@@ -54,7 +54,7 @@ public class HelloWorldRestController {
      
     //-------------------Create a User--------------------------------------------------------
      
-    @RequestMapping(value = "/user/", method = RequestMethod.POST)
+    @RequestMapping(value = "/hwuser/", method = RequestMethod.POST)
     public ResponseEntity<Void> createUser(@RequestBody CargoUser user,    UriComponentsBuilder ucBuilder) {
         System.out.println("Creating User " + user.getUsername());
  
@@ -74,7 +74,7 @@ public class HelloWorldRestController {
      
     //------------------- Update a User --------------------------------------------------------
      
-    @RequestMapping(value = "/user/{id}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/hwuser/{id}", method = RequestMethod.PUT)
     public ResponseEntity<CargoUser> updateUser(@PathVariable("id") long id, @RequestBody CargoUser user) {
         System.out.println("Updating User " + id);
          
@@ -97,7 +97,7 @@ public class HelloWorldRestController {
     
     //------------------- Delete a User --------------------------------------------------------
      
-    @RequestMapping(value = "/user/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/hwuser/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<CargoUser> deleteUser(@PathVariable("id") long id) {
         System.out.println("Fetching & Deleting User with id " + id);
  
@@ -115,7 +115,7 @@ public class HelloWorldRestController {
     
     //------------------- Delete All Users --------------------------------------------------------
      
-    @RequestMapping(value = "/user/", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/hwuser/", method = RequestMethod.DELETE)
     public ResponseEntity<CargoUser> deleteAllUsers() {
         System.out.println("Deleting All Users");
  

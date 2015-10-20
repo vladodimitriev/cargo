@@ -1,26 +1,27 @@
 'use strict';
 
-App.controller('CargoUserController', ['$scope', 'CargoUserService', function($scope, UserService) {
+App.controller('CargoUserController', ['$scope', 'CargoUserService', function($scope, CargoUserService) {
           var self = this;
           self.user={id:null,username:'',address:'',email:''};
           self.users=[];
               
           self.fetchAllUsers = function(){
-              UserService.fetchAllUsers()
+        	  CargoUserService.fetchAllUsers()
                   .then(
-      					       function(d) {
-      						        self.users = d;
-      					       },
-            					function(errResponse){
-            						console.error('Error while fetching Currencies');
-            					}
+	  					       function(d) {
+	  						        self.users = d;
+	  					       },
+	  					       
+	        				   function(errResponse){
+	        						console.error('Error while fetching Currencies');
+	        				   }
       			       );
           };
            
           self.createUser = function(user){
-              UserService.createUser(user)
+        	  CargoUserService.createUser(user)
 		              .then(
-                      self.fetchAllUsers, 
+		            		  self.fetchAllUsers, 
 				              function(errResponse){
 					               console.error('Error while creating User.');
 				              }	
@@ -28,7 +29,7 @@ App.controller('CargoUserController', ['$scope', 'CargoUserService', function($s
           };
 
          self.updateUser = function(user, id){
-              UserService.updateUser(user, id)
+        	 CargoUserService.updateUser(user, id)
 		              .then(
 				              self.fetchAllUsers, 
 				              function(errResponse){
@@ -38,7 +39,7 @@ App.controller('CargoUserController', ['$scope', 'CargoUserService', function($s
           };
 
          self.deleteUser = function(id){
-              UserService.deleteUser(id)
+        	 CargoUserService.deleteUser(id)
 		              .then(
 				              self.fetchAllUsers, 
 				              function(errResponse){
